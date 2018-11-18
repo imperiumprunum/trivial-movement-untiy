@@ -33,7 +33,7 @@ public class Player : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             velocity.y = jumpVelocity;
-            Debug.Log("jump");
+            //Debug.Log("jump");
         }
 
         velocity.x = input.x * speed;

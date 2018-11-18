@@ -54,9 +54,9 @@ public class Controller2D : MonoBehaviour {
         Debug.DrawRay(rayCastOrigins.bottomRight, Vector3.down, Color.red);
 
         RaycastHit2D hitRight = Physics2D.Raycast(rayCastOrigins.bottomRight, Vector2.down, rayLength , collisionMask);
-        ///RaycastHit2D hitLeft = Physics2D.Raycast(rayCastOrigins.bottomLeft, Vector3.down, rayLength, collisionMask);
+        RaycastHit2D hitLeft = Physics2D.Raycast(rayCastOrigins.bottomLeft, Vector3.down, rayLength, collisionMask);
 
-        if (hitRight && directionY == -1) //(hitLeft || hitRight)
+        if ((hitRight || hitLeft) && directionY == -1) //(hitLeft || hitRight)
         {
             
             //rayLength -= 0.1f;
@@ -67,7 +67,7 @@ public class Controller2D : MonoBehaviour {
 
                 collisions.above = true;
                 Debug.DrawRay(hitRight.point, Vector3.down, Color.yellow);
-                //Debug.DrawRay(hitLeft.point, Vector3.up, Color.yellow);
+                Debug.DrawRay(hitLeft.point, Vector3.down, Color.yellow);
             //}
             //Debug.Log("Left: " + hitLeft.distance);
             //Debug.Log("Right: "+hitRight.distance);
